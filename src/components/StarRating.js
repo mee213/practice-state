@@ -30,9 +30,13 @@ class StarRating extends Component {
   // Write an event handler that updates the rating state based on the star a user clicks.
   // Pass the function to a Star component via props, and called when a user clicks on a star
   handleSetRating = (rating) => {
-    this.setState({
-      rating
-    });
+    if (this.state.rating === rating) {
+      this.setState({ rating: 0 })
+    } else {
+      this.setState({
+        rating
+      });
+    }
   };
 
   render() {
